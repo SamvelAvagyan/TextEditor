@@ -1,0 +1,14 @@
+Text Editor/Text Editor.csproj
+Text Editor/App.config
+*.config
+.vs/Text Editor/v16/Server/sqlite3/db.lock
+.vs/Text Editor/v16/Server/sqlite3/storage.ide
+.vs/Text Editor/v16/Server/sqlite3/storage.ide-shm
+.vs/Text Editor/v16/Server/sqlite3/storage.ide-wal
+Text Editor/obj/Debug/Text Editor.csproj.FileListAbsolute.txt
+Text Editor/obj/Debug/Text_Editor.Form1.resources
+Text Editor/obj/Debug/Text_Editor.Properties.Resources.resources
+Text Editor/Properties/AssemblyInfo.cs
+Text Editor/Properties/Resources.resx
+Text Editor/Properties/Settings.Designer.cs
+Text Editor/Properties/Settings.settings
