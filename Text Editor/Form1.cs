@@ -19,7 +19,7 @@ namespace Text_Editor
         }
 
         // Bold
-        private void button1_Click(object sender, EventArgs e)
+        private void boldButton_Click(object sender, EventArgs e)
         {
             Font f = richTextBox1.Font;
 
