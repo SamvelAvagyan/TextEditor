@@ -1,6 +1,6 @@
 ﻿namespace Text_Editor
 {
-    partial class Form1
+    partial class form1
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,67 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
+            this.saveButton = new System.Windows.Forms.Button();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button12 = new System.Windows.Forms.Button();
+            this.openButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.changingText = new System.Windows.Forms.Label();
+            this.positioningText = new System.Windows.Forms.Label();
+            this.strikeoutButton = new System.Windows.Forms.Button();
+            this.replaceButton = new System.Windows.Forms.Button();
+            this.backgroundColor = new System.Windows.Forms.Button();
+            this.textColor = new System.Windows.Forms.Button();
+            this.fontButton = new System.Windows.Forms.Button();
+            this.textAlignCenterButton = new System.Windows.Forms.Button();
+            this.textAlignRightButton = new System.Windows.Forms.Button();
+            this.textAlignLeftButton = new System.Windows.Forms.Button();
+            this.underlineButton = new System.Windows.Forms.Button();
+            this.italicsButton = new System.Windows.Forms.Button();
             this.boldButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // richTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 41);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(784, 397);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.richTextBox.Location = new System.Drawing.Point(12, 41);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.Size = new System.Drawing.Size(784, 397);
+            this.richTextBox.TabIndex = 1;
+            this.richTextBox.Text = "";
+            this.richTextBox.TextChanged += new System.EventHandler(this.richTextBoxTextChanged);
             // 
-            // button2
+            // saveButton
             // 
-            this.button2.Location = new System.Drawing.Point(64, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.saveButton.Location = new System.Drawing.Point(64, 12);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(46, 23);
+            this.saveButton.TabIndex = 2;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButtonClick);
             // 
-            // ofd
+            // openButton
             // 
-            this.ofd.FileName = "openFileDialog1";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(12, 12);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(48, 23);
-            this.button12.TabIndex = 12;
-            this.button12.Text = "Open";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.openButton.Location = new System.Drawing.Point(12, 12);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(48, 23);
+            this.openButton.TabIndex = 12;
+            this.openButton.Text = "Open";
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButtonClick);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(515, 14);
+            this.textBox1.Location = new System.Drawing.Point(517, 13);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(78, 20);
@@ -97,133 +93,133 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(686, 13);
+            this.textBox2.Location = new System.Drawing.Point(682, 13);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(78, 20);
             this.textBox2.TabIndex = 14;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // label1
+            // changingText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(446, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "First Symbol";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.changingText.AutoSize = true;
+            this.changingText.Location = new System.Drawing.Point(444, 16);
+            this.changingText.Name = "changingText";
+            this.changingText.Size = new System.Drawing.Size(72, 13);
+            this.changingText.TabIndex = 15;
+            this.changingText.Text = "Changing text";
+            this.changingText.Click += new System.EventHandler(this.changingTextClick);
             // 
-            // label2
+            // positioningText
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(599, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Second Symbol";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.positioningText.AutoSize = true;
+            this.positioningText.Location = new System.Drawing.Point(603, 16);
+            this.positioningText.Name = "positioningText";
+            this.positioningText.Size = new System.Drawing.Size(78, 13);
+            this.positioningText.TabIndex = 16;
+            this.positioningText.Text = "Positioning text";
+            this.positioningText.Click += new System.EventHandler(this.positioningTextClick);
             // 
-            // button13
+            // strikeoutButton
             // 
-            this.button13.Image = global::Text_Editor.Properties.Resources.Line;
-            this.button13.Location = new System.Drawing.Point(205, 11);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(35, 24);
-            this.button13.TabIndex = 18;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.strikeoutButton.Image = global::Text_Editor.Properties.Resources.Line;
+            this.strikeoutButton.Location = new System.Drawing.Point(205, 11);
+            this.strikeoutButton.Name = "strikeoutButton";
+            this.strikeoutButton.Size = new System.Drawing.Size(35, 24);
+            this.strikeoutButton.TabIndex = 18;
+            this.strikeoutButton.UseVisualStyleBackColor = true;
+            this.strikeoutButton.Click += new System.EventHandler(this.strikeoutButtonClick);
             // 
-            // button8
+            // replaceButton
             // 
-            this.button8.Image = global::Text_Editor.Properties.Resources.ReplaceIcon1;
-            this.button8.Location = new System.Drawing.Point(770, 11);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(26, 23);
-            this.button8.TabIndex = 17;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.replaceButton.Image = global::Text_Editor.Properties.Resources.ReplaceIcon1;
+            this.replaceButton.Location = new System.Drawing.Point(770, 11);
+            this.replaceButton.Name = "replaceButton";
+            this.replaceButton.Size = new System.Drawing.Size(26, 23);
+            this.replaceButton.TabIndex = 17;
+            this.replaceButton.UseVisualStyleBackColor = true;
+            this.replaceButton.Click += new System.EventHandler(this.replaceButtonClick);
             // 
-            // button11
+            // backgroundColor
             // 
-            this.button11.Image = global::Text_Editor.Properties.Resources.BackgroundColor;
-            this.button11.Location = new System.Drawing.Point(372, 11);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(32, 23);
-            this.button11.TabIndex = 11;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.backgroundColor.Image = global::Text_Editor.Properties.Resources.BackgroundColor;
+            this.backgroundColor.Location = new System.Drawing.Point(372, 11);
+            this.backgroundColor.Name = "backgroundColor";
+            this.backgroundColor.Size = new System.Drawing.Size(32, 23);
+            this.backgroundColor.TabIndex = 11;
+            this.backgroundColor.UseVisualStyleBackColor = true;
+            this.backgroundColor.Click += new System.EventHandler(this.backgroundColorButtonClick);
             // 
-            // button10
+            // textColor
             // 
-            this.button10.Image = global::Text_Editor.Properties.Resources.TextColor;
-            this.button10.Location = new System.Drawing.Point(339, 11);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(27, 23);
-            this.button10.TabIndex = 10;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.textColor.Image = global::Text_Editor.Properties.Resources.TextColor;
+            this.textColor.Location = new System.Drawing.Point(339, 11);
+            this.textColor.Name = "textColor";
+            this.textColor.Size = new System.Drawing.Size(27, 23);
+            this.textColor.TabIndex = 10;
+            this.textColor.UseVisualStyleBackColor = true;
+            this.textColor.Click += new System.EventHandler(this.textColorButtonClick);
             // 
-            // button9
+            // fontButton
             // 
-            this.button9.Image = global::Text_Editor.Properties.Resources.TextFont;
-            this.button9.Location = new System.Drawing.Point(410, 11);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 9;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.fontButton.Image = global::Text_Editor.Properties.Resources.TextFont;
+            this.fontButton.Location = new System.Drawing.Point(410, 11);
+            this.fontButton.Name = "fontButton";
+            this.fontButton.Size = new System.Drawing.Size(29, 23);
+            this.fontButton.TabIndex = 9;
+            this.fontButton.UseVisualStyleBackColor = true;
+            this.fontButton.Click += new System.EventHandler(this.fontButtonClick);
             // 
-            // button7
+            // textAlignCenterButton
             // 
-            this.button7.Image = global::Text_Editor.Properties.Resources.CenterAlign1;
-            this.button7.Location = new System.Drawing.Point(277, 11);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(25, 23);
-            this.button7.TabIndex = 7;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.textAlignCenterButton.Image = global::Text_Editor.Properties.Resources.CenterAlign1;
+            this.textAlignCenterButton.Location = new System.Drawing.Point(277, 11);
+            this.textAlignCenterButton.Name = "textAlignCenterButton";
+            this.textAlignCenterButton.Size = new System.Drawing.Size(25, 23);
+            this.textAlignCenterButton.TabIndex = 7;
+            this.textAlignCenterButton.UseVisualStyleBackColor = true;
+            this.textAlignCenterButton.Click += new System.EventHandler(this.textAlignCenterButtonClick);
             // 
-            // button6
+            // textAlignRightButton
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Image = global::Text_Editor.Properties.Resources.RightAlign;
-            this.button6.Location = new System.Drawing.Point(307, 11);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(26, 23);
-            this.button6.TabIndex = 6;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.textAlignRightButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textAlignRightButton.Image = global::Text_Editor.Properties.Resources.RightAlign;
+            this.textAlignRightButton.Location = new System.Drawing.Point(307, 11);
+            this.textAlignRightButton.Name = "textAlignRightButton";
+            this.textAlignRightButton.Size = new System.Drawing.Size(26, 23);
+            this.textAlignRightButton.TabIndex = 6;
+            this.textAlignRightButton.UseVisualStyleBackColor = false;
+            this.textAlignRightButton.Click += new System.EventHandler(this.textAlignRightButtonClick);
             // 
-            // button5
+            // textAlignLeftButton
             // 
-            this.button5.Image = global::Text_Editor.Properties.Resources.LeftAlign;
-            this.button5.Location = new System.Drawing.Point(246, 11);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(25, 23);
-            this.button5.TabIndex = 5;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.textAlignLeftButton.Image = global::Text_Editor.Properties.Resources.LeftAlign;
+            this.textAlignLeftButton.Location = new System.Drawing.Point(246, 11);
+            this.textAlignLeftButton.Name = "textAlignLeftButton";
+            this.textAlignLeftButton.Size = new System.Drawing.Size(25, 23);
+            this.textAlignLeftButton.TabIndex = 5;
+            this.textAlignLeftButton.UseVisualStyleBackColor = true;
+            this.textAlignLeftButton.Click += new System.EventHandler(this.textAlignLeftButtonClick);
             // 
-            // button4
+            // underlineButton
             // 
-            this.button4.Image = global::Text_Editor.Properties.Resources.UnderLine1;
-            this.button4.Location = new System.Drawing.Point(176, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 23);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.underlineButton.Image = global::Text_Editor.Properties.Resources.UnderLine1;
+            this.underlineButton.Location = new System.Drawing.Point(176, 12);
+            this.underlineButton.Name = "underlineButton";
+            this.underlineButton.Size = new System.Drawing.Size(23, 23);
+            this.underlineButton.TabIndex = 4;
+            this.underlineButton.UseVisualStyleBackColor = true;
+            this.underlineButton.Click += new System.EventHandler(this.underlineButtonClick);
             // 
-            // button3
+            // italicsButton
             // 
-            this.button3.Image = global::Text_Editor.Properties.Resources.Kursiv;
-            this.button3.Location = new System.Drawing.Point(147, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(23, 23);
-            this.button3.TabIndex = 3;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.italicsButton.Image = global::Text_Editor.Properties.Resources.Kursiv;
+            this.italicsButton.Location = new System.Drawing.Point(147, 12);
+            this.italicsButton.Name = "italicsButton";
+            this.italicsButton.Size = new System.Drawing.Size(23, 23);
+            this.italicsButton.TabIndex = 3;
+            this.italicsButton.UseVisualStyleBackColor = true;
+            this.italicsButton.Click += new System.EventHandler(this.italicsButtonClick);
             // 
             // boldButton
             // 
@@ -233,38 +229,39 @@
             this.boldButton.Size = new System.Drawing.Size(26, 23);
             this.boldButton.TabIndex = 0;
             this.boldButton.UseVisualStyleBackColor = true;
-            this.boldButton.Click += new System.EventHandler(this.boldButton_Click);
+            this.boldButton.Click += new System.EventHandler(this.boldButtonClick);
             // 
-            // Form1
+            // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(807, 450);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.strikeoutButton);
+            this.Controls.Add(this.replaceButton);
+            this.Controls.Add(this.positioningText);
+            this.Controls.Add(this.changingText);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.openButton);
+            this.Controls.Add(this.backgroundColor);
+            this.Controls.Add(this.textColor);
+            this.Controls.Add(this.fontButton);
+            this.Controls.Add(this.textAlignCenterButton);
+            this.Controls.Add(this.textAlignRightButton);
+            this.Controls.Add(this.textAlignLeftButton);
+            this.Controls.Add(this.underlineButton);
+            this.Controls.Add(this.italicsButton);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.boldButton);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(823, 489);
             this.MinimumSize = new System.Drawing.Size(823, 489);
-            this.Name = "Form1";
+            this.Name = "form1";
             this.Text = "Text Editor";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.formLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,27 +270,27 @@
         #endregion
 
         private System.Windows.Forms.Button boldButton;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox richTextBox;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.OpenFileDialog ofd;
         private System.Windows.Forms.SaveFileDialog sfd;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button italicsButton;
+        private System.Windows.Forms.Button underlineButton;
+        private System.Windows.Forms.Button textAlignLeftButton;
+        private System.Windows.Forms.Button textAlignRightButton;
+        private System.Windows.Forms.Button textAlignCenterButton;
+        private System.Windows.Forms.Button fontButton;
+        private System.Windows.Forms.Button textColor;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button backgroundColor;
+        private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label changingText;
+        private System.Windows.Forms.Label positioningText;
+        private System.Windows.Forms.Button replaceButton;
+        private System.Windows.Forms.Button strikeoutButton;
     }
 }
 

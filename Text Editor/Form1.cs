@@ -11,32 +11,32 @@ using System.Windows.Forms;
 
 namespace Text_Editor
 {
-    public partial class Form1 : Form
+    public partial class form1 : System.Windows.Forms.Form
     {
-        public Form1()
+        public form1()
         {
             InitializeComponent();
         }
 
         // Bold
-        private void boldButton_Click(object sender, EventArgs e)
+        private void boldButtonClick(object sender, EventArgs e)
         {
-            Font f = richTextBox1.Font;
+            Font f = richTextBox.Font;
 
-            if (richTextBox1.SelectedText != "")
+            if (richTextBox.SelectedText != "")
             {
-                richTextBox1.SelectionFont = new Font(f, FontStyle.Bold);
+                richTextBox.SelectionFont = new Font(f, FontStyle.Bold);
                               
             }
             else
             {
 
-                richTextBox1.Font = new Font(f, FontStyle.Bold);
+                richTextBox.Font = new Font(f, FontStyle.Bold);
             }
         }
 
         // Save File
-        private void button2_Click(object sender, EventArgs e)
+        private void saveButtonClick(object sender, EventArgs e)
         {
             sfd.FileName = ofd.FileName;
             sfd.Filter = "Word Documents|*.doc|txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -47,7 +47,7 @@ namespace Text_Editor
                 {
                     using (StreamWriter Writer = new StreamWriter(sfd.FileName, false, Encoding.GetEncoding(1251)))
                     {
-                        Writer.Write(richTextBox1.Text);
+                        Writer.Write(richTextBox.Text);
                         Writer.Close();
                     }
                 }
@@ -59,88 +59,89 @@ namespace Text_Editor
         }
 
         // Italics
-        private void button3_Click(object sender, EventArgs e)
+        private void italicsButtonClick(object sender, EventArgs e)
         {
-            if (richTextBox1.SelectedText != "")
+            if (richTextBox.SelectedText != "")
             {
-                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+                richTextBox.SelectionFont = new Font(richTextBox.Font, FontStyle.Italic);
             }
             else
             {
-                richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
+                richTextBox.Font = new Font(richTextBox.Font, FontStyle.Italic);
             }
         }
 
         // UnderLine
-        private void button4_Click(object sender, EventArgs e)
+        private void underlineButtonClick(object sender, EventArgs e)
         {
-            if (richTextBox1.SelectedText != "")
+            if (richTextBox.SelectedText != "")
             {
-                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+                richTextBox.SelectionFont = new Font(richTextBox.Font, FontStyle.Underline);
             }
             else
             {
-                richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Underline);
+                richTextBox.Font = new Font(richTextBox.Font, FontStyle.Underline);
             }
         }
 
         // Text Align Left
-        private void button5_Click(object sender, EventArgs e)
+        private void textAlignLeftButtonClick(object sender, EventArgs e)
         {
-            richTextBox1.SelectionAlignment = HorizontalAlignment.Left;
+            richTextBox.SelectionAlignment = HorizontalAlignment.Left;
         }
 
         // Text Align Right
-        private void button6_Click(object sender, EventArgs e)
+        private void textAlignRightButtonClick(object sender, EventArgs e)
         {
-            richTextBox1.SelectionAlignment = HorizontalAlignment.Right;
+            richTextBox.SelectionAlignment = HorizontalAlignment.Right;
         }
 
         // Text Align Center
-        private void button7_Click(object sender, EventArgs e)
+        private void textAlignCenterButtonClick(object sender, EventArgs e)
         {
-            richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+            richTextBox.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         // Font Style
-        private void button9_Click(object sender, EventArgs e)
+        private void fontButtonClick(object sender, EventArgs e)
         {
             if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
-                richTextBox1.Font = fontDialog1.Font;
+                richTextBox.Font = fontDialog1.Font;
             }
         }
 
         // Text Color
-        private void button10_Click(object sender, EventArgs e)
+        private void textColorButtonClick(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (richTextBox1.SelectedText == "")
+                if (richTextBox.SelectedText == "")
                 {
-                    richTextBox1.ForeColor = colorDialog1.Color;
+                    richTextBox.ForeColor = colorDialog1.Color;
                 }
                 else
                 {
-                    richTextBox1.SelectionColor = colorDialog1.Color;
+                    richTextBox.SelectionColor = colorDialog1.Color;
                 }
             }
         }
 
         // Background Color
-        private void button11_Click(object sender, EventArgs e)
+        private void backgroundColorButtonClick(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                richTextBox1.BackColor = colorDialog1.Color;
+                richTextBox.BackColor = colorDialog1.Color;
             }
         }
 
         // Open File
-        private void button12_Click(object sender, EventArgs e)
+        private void openButtonClick(object sender, EventArgs e)
         {
             ofd.ShowDialog();
             ofd.Filter = "Word Documents|*.doc|txt files (*.txt)|*.txt|All files (*.*)|*.*"; //"txt files (*.txt)|*.txt|All files (*.*)|*.*"
+            formLoad(sender, e);
 
             if (ofd.FileName == String.Empty) return;
 
@@ -148,7 +149,7 @@ namespace Text_Editor
             {
                 using (StreamReader SReader = new StreamReader(ofd.FileName, Encoding.GetEncoding(1251)))
                 {
-                    richTextBox1.Text = SReader.ReadToEnd();
+                    richTextBox.Text = SReader.ReadToEnd();
                     SReader.Close();
                 }
 
@@ -159,12 +160,12 @@ namespace Text_Editor
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void formLoad(object sender, EventArgs e)
         {
-
+            Text = $"Text Editor - {ofd.FileName}";
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void richTextBoxTextChanged(object sender, EventArgs e)
         {
 
         }
@@ -174,9 +175,9 @@ namespace Text_Editor
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void replaceButtonClick(object sender, EventArgs e)
         {
-            richTextBox1.Text = richTextBox1.Text.Replace(textBox1.Text, textBox2.Text);
+            richTextBox.Text = richTextBox.Text.Replace(textBox1.Text, textBox2.Text);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -184,26 +185,26 @@ namespace Text_Editor
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void changingTextClick(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void positioningTextClick(object sender, EventArgs e)
         {
 
         }
 
         // Strikeout
-        private void button13_Click(object sender, EventArgs e)
+        private void strikeoutButtonClick(object sender, EventArgs e)
         {
-            if(richTextBox1.SelectedText == "")
+            if(richTextBox.SelectedText == "")
             {
-                richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Strikeout);
+                richTextBox.Font = new Font(richTextBox.Font, FontStyle.Strikeout);
             }
             else
             {
-                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Strikeout);
+                richTextBox.SelectionFont = new Font(richTextBox.Font, FontStyle.Strikeout);
             }
         }
 
