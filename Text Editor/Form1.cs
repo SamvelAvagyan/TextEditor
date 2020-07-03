@@ -13,6 +13,7 @@ namespace Text_Editor
 {
     public partial class form1 : System.Windows.Forms.Form
     {
+        Color c;
         public form1()
         {
             InitializeComponent();
@@ -21,18 +22,7 @@ namespace Text_Editor
         // Bold
         private void boldButtonClick(object sender, EventArgs e)
         {
-            Font f = richTextBox.Font;
-
-            if (richTextBox.SelectedText != "")
-            {
-                richTextBox.SelectionFont = new Font(f, FontStyle.Bold);
-                              
-            }
-            else
-            {
-
-                richTextBox.Font = new Font(f, FontStyle.Bold);
-            }
+            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Bold | richTextBox.SelectionFont.Style);
         }
 
         // Save File
@@ -61,27 +51,13 @@ namespace Text_Editor
         // Italics
         private void italicsButtonClick(object sender, EventArgs e)
         {
-            if (richTextBox.SelectedText != "")
-            {
-                richTextBox.SelectionFont = new Font(richTextBox.Font, FontStyle.Italic);
-            }
-            else
-            {
-                richTextBox.Font = new Font(richTextBox.Font, FontStyle.Italic);
-            }
+            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Italic | richTextBox.SelectionFont.Style);
         }
 
         // UnderLine
         private void underlineButtonClick(object sender, EventArgs e)
         {
-            if (richTextBox.SelectedText != "")
-            {
-                richTextBox.SelectionFont = new Font(richTextBox.Font, FontStyle.Underline);
-            }
-            else
-            {
-                richTextBox.Font = new Font(richTextBox.Font, FontStyle.Underline);
-            }
+            richTextBox.SelectionFont = new Font(richTextBox.Font, FontStyle.Underline | richTextBox.SelectionFont.Style);
         }
 
         // Text Align Left
@@ -108,6 +84,8 @@ namespace Text_Editor
             if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
                 richTextBox.Font = fontDialog1.Font;
+                richTextBox.ForeColor = c;
+                richTextBox.Font = richTextBox.Font;
             }
         }
 
@@ -119,11 +97,11 @@ namespace Text_Editor
                 if (richTextBox.SelectedText == "")
                 {
                     richTextBox.ForeColor = colorDialog1.Color;
+                    c = colorDialog1.Color;
                 }
-                else
-                {
-                    richTextBox.SelectionColor = colorDialog1.Color;
-                }
+
+                richTextBox.SelectionColor = colorDialog1.Color;
+                c = colorDialog1.Color;
             }
         }
 
@@ -198,14 +176,7 @@ namespace Text_Editor
         // Strikeout
         private void strikeoutButtonClick(object sender, EventArgs e)
         {
-            if(richTextBox.SelectedText == "")
-            {
-                richTextBox.Font = new Font(richTextBox.Font, FontStyle.Strikeout);
-            }
-            else
-            {
-                richTextBox.SelectionFont = new Font(richTextBox.Font, FontStyle.Strikeout);
-            }
+            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Strikeout | richTextBox.SelectionFont.Style);
         }
 
         private void button14_Click(object sender, EventArgs e)
