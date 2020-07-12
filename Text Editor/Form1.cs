@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Text_Editor
 {
-    public partial class form1 : System.Windows.Forms.Form
+    public partial class Form : System.Windows.Forms.Form
     {
         Color c;
-        public form1()
+        public Form()
         {
             InitializeComponent();
         }
@@ -23,29 +23,6 @@ namespace Text_Editor
         private void boldButtonClick(object sender, EventArgs e)
         {
             richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Bold | richTextBox.SelectionFont.Style);
-        }
-
-        // Save File
-        private void saveButtonClick(object sender, EventArgs e)
-        {
-            sfd.FileName = ofd.FileName;
-            sfd.Filter = "Word Documents|*.doc|txt files (*.txt)|*.txt|All files (*.*)|*.*";
-
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    using (StreamWriter Writer = new StreamWriter(sfd.FileName, false, Encoding.GetEncoding(1251)))
-                    {
-                        Writer.Write(richTextBox.Text);
-                        Writer.Close();
-                    }
-                }
-                catch (Exception a)
-                {
-                    MessageBox.Show(a.Message);
-                }
-            }
         }
 
         // Italics
@@ -114,30 +91,6 @@ namespace Text_Editor
             }
         }
 
-        // Open File
-        private void openButtonClick(object sender, EventArgs e)
-        {
-            ofd.ShowDialog();
-            ofd.Filter = "Word Documents|*.doc|txt files (*.txt)|*.txt|All files (*.*)|*.*"; //"txt files (*.txt)|*.txt|All files (*.*)|*.*"
-            formLoad(sender, e);
-
-            if (ofd.FileName == String.Empty) return;
-
-            try
-            {
-                using (StreamReader SReader = new StreamReader(ofd.FileName, Encoding.GetEncoding(1251)))
-                {
-                    richTextBox.Text = SReader.ReadToEnd();
-                    SReader.Close();
-                }
-
-            }
-            catch (Exception a)
-            {
-                MessageBox.Show(a.Message);
-            }
-        }
-
         private void formLoad(object sender, EventArgs e)
         {
             Text = $"Text Editor - {ofd.FileName}";
@@ -182,6 +135,69 @@ namespace Text_Editor
         private void button14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        // Open File
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            ofd.Filter = "Word Documents|*.doc|txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            formLoad(sender, e);
+
+            if (ofd.FileName == String.Empty) return;
+
+            try
+            {
+                using (StreamReader SReader = new StreamReader(ofd.FileName, Encoding.GetEncoding(1251)))
+                {
+                    richTextBox.Text = SReader.ReadToEnd();
+                    SReader.Close();
+                }
+
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message);
+            }
+        }
+
+        // Save File
+        private void saveToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            sfd.FileName = ofd.FileName;
+            sfd.Filter = "Word Documents|*.doc|txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter Writer = new StreamWriter(sfd.FileName, false, Encoding.GetEncoding(1251)))
+                    {
+                        Writer.Write(richTextBox.Text);
+                        Writer.Close();
+                    }
+                }
+                catch (Exception a)
+                {
+                    MessageBox.Show(a.Message);
+                }
+            }
+        }
+
+        // Exit
+        private void exitToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void leftButtonClick(object sender, EventArgs e)
+        {
+            richTextBox.SelectionIndent -= 15;
+        }
+
+        private void rightButtonClick(object sender, EventArgs e)
+        {
+            richTextBox.SelectionIndent += 15;
         }
     }
 }
