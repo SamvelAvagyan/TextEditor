@@ -14,6 +14,7 @@ namespace Text_Editor
     public partial class Form : System.Windows.Forms.Form
     {
         Color c;
+        FontStyle f;
         public Form()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace Text_Editor
         // UnderLine
         private void underlineButtonClick(object sender, EventArgs e)
         {
-            richTextBox.SelectionFont = new Font(richTextBox.Font, FontStyle.Underline | richTextBox.SelectionFont.Style);
+            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Underline | richTextBox.SelectionFont.Style);
         }
 
         // Text Align Left
@@ -108,7 +109,9 @@ namespace Text_Editor
 
         private void replaceButtonClick(object sender, EventArgs e)
         {
+            f = richTextBox.SelectionFont.Style;
             richTextBox.Text = richTextBox.Text.Replace(textBox1.Text, textBox2.Text);
+            richTextBox.Font = new Font(richTextBox.Font, f);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
