@@ -61,9 +61,11 @@ namespace Text_Editor
         {
             if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
+                f = richTextBox.SelectionFont.Style;
                 richTextBox.Font = fontDialog1.Font;
-                richTextBox.ForeColor = c;
                 richTextBox.Font = richTextBox.Font;
+                richTextBox.SelectionColor = c;
+                richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, f);
             }
         }
 
@@ -112,6 +114,7 @@ namespace Text_Editor
             f = richTextBox.SelectionFont.Style;
             richTextBox.Text = richTextBox.Text.Replace(textBox1.Text, textBox2.Text);
             richTextBox.Font = new Font(richTextBox.Font, f);
+            richTextBox.ForeColor = c;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
