@@ -15,6 +15,10 @@ namespace Text_Editor
     {
         Color c;
         FontStyle f;
+        bool isBold = false;
+        bool isItalic = false;
+        bool isUnderlined = false;
+        bool isStrikeout = false;
         public Form()
         {
             InitializeComponent();
@@ -23,19 +27,55 @@ namespace Text_Editor
         // Bold
         private void boldButtonClick(object sender, EventArgs e)
         {
-            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Bold | richTextBox.SelectionFont.Style);
+            if (richTextBox.SelectedText != "")
+            {
+                if (isBold)
+                {
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, richTextBox.SelectionFont.Style & ~FontStyle.Bold);
+                    isBold = false;
+                }
+                else
+                {
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Bold | richTextBox.SelectionFont.Style);
+                    isBold = true;
+                }
+            }
         }
 
         // Italics
         private void italicsButtonClick(object sender, EventArgs e)
         {
-            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Italic | richTextBox.SelectionFont.Style);
+            if (richTextBox.SelectedText != "")
+            {
+                if (isItalic)
+                {
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, richTextBox.SelectionFont.Style & ~FontStyle.Italic);
+                    isItalic = false;
+                }
+                else
+                {
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Italic | richTextBox.SelectionFont.Style);
+                    isItalic = true;
+                }
+            }
         }
 
         // UnderLine
         private void underlineButtonClick(object sender, EventArgs e)
         {
-            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Underline | richTextBox.SelectionFont.Style);
+            if (richTextBox.SelectedText != "")
+            {
+                if (isUnderlined)
+                {
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, richTextBox.SelectionFont.Style & ~FontStyle.Underline);
+                    isUnderlined = false;
+                }
+                else
+                {
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Underline | richTextBox.SelectionFont.Style);
+                    isUnderlined = true;
+                }
+            }
         }
 
         // Text Align Left
@@ -135,7 +175,19 @@ namespace Text_Editor
         // Strikeout
         private void strikeoutButtonClick(object sender, EventArgs e)
         {
-            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Strikeout | richTextBox.SelectionFont.Style);
+            if (richTextBox.SelectedText != "")
+            {
+                if (isStrikeout)
+                {
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, richTextBox.SelectionFont.Style & ~FontStyle.Strikeout);
+                    isStrikeout = false;
+                }
+                else
+                {
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Strikeout | richTextBox.SelectionFont.Style);
+                    isStrikeout = true;
+                }
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
