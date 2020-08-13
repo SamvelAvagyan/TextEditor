@@ -57,6 +57,7 @@
             this.fontButton = new System.Windows.Forms.Button();
             this.backgroundColor = new System.Windows.Forms.Button();
             this.textColor = new System.Windows.Forms.Button();
+            this.tbCurrentSelection = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             this.richTextBox.Size = new System.Drawing.Size(460, 397);
             this.richTextBox.TabIndex = 1;
             this.richTextBox.Text = "";
+            this.richTextBox.SelectionChanged += new System.EventHandler(this.rtbSelectionChanged);
             this.richTextBox.TextChanged += new System.EventHandler(this.richTextBoxTextChanged);
             // 
             // textBox1
@@ -320,6 +322,17 @@
             this.textColor.UseVisualStyleBackColor = true;
             this.textColor.Click += new System.EventHandler(this.textColorButtonClick);
             // 
+            // tbCurrentSelection
+            // 
+            this.tbCurrentSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCurrentSelection.Location = new System.Drawing.Point(614, 69);
+            this.tbCurrentSelection.Multiline = true;
+            this.tbCurrentSelection.Name = "tbCurrentSelection";
+            this.tbCurrentSelection.ReadOnly = true;
+            this.tbCurrentSelection.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbCurrentSelection.Size = new System.Drawing.Size(181, 203);
+            this.tbCurrentSelection.TabIndex = 24;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,6 +340,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(807, 486);
+            this.Controls.Add(this.tbCurrentSelection);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.menuStrip1);
@@ -376,6 +390,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button leftButton;
         private System.Windows.Forms.Button rightButton;
+        private System.Windows.Forms.TextBox tbCurrentSelection;
     }
 }
 

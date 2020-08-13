@@ -219,6 +219,20 @@ namespace Text_Editor
             }
         }
 
+
+        // Selection Text Change
+        private void rtbSelectionChanged(object sender, EventArgs e)
+        {
+            if(richTextBox == null)
+            {
+                return;
+            }
+
+            tbCurrentSelection.Text = String.Format($"Position: {richTextBox.SelectionStart}, " +
+                $"SelectedSymbolsCount: {richTextBox.SelectionLength}, " +
+                $"SelectedText: {richTextBox.SelectedText}");
+        }
+
         // Save File
         private void saveToolStripMenuItemClick(object sender, EventArgs e)
         {
